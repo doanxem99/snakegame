@@ -1,0 +1,274 @@
+*{
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+    font-family: "Roboto", sans-serif;
+    list-style: none;
+}
+.screenContainer{
+    position: relative;
+    display: block;
+}
+h1{
+    color: whitesmoke;
+    text-align: center;
+    font-size: clamp(1px, 5vw, 40px);
+    margin: auto;
+}
+header{
+    width: 100%;
+    height: 100px;
+    background: darkcyan;
+    margin: auto;
+    margin-top: 20px;
+    padding-top: 50px;
+}
+.icon{
+    position: relative;
+    color: whitesmoke;
+    border-radius: 20px;
+    background: darkcyan;
+    padding: 15px;
+    font-size: clamp(10px, 1vw, 20px);
+}
+.about{
+    width: 50px;
+    height: 50px;
+    font-size: clamp(20px, 1vw, 40px);
+    padding: 10px;
+    justify-content: center;
+    color: whitesmoke;
+    background-color: darkcyan;
+    border-style: outset;
+    z-index: 3;
+    transition: 0.1s linear;
+}
+.about:hover{
+    cursor: pointer;
+    border-style: inset;
+}
+.aboutactive{
+    transform: rotate(90deg);
+}
+.menu{
+    display: flex;
+    position: relative;
+    justify-content:space-between;
+    list-style: none;
+}
+.menu li{
+    margin-left: 2%;
+    font-size: clamp(10px, 2.5vw, 25px);
+}
+.menu li a{
+    text-decoration: none;
+    color: black;
+}
+.menu li a:hover{
+    color: darkcyan;
+}
+.menu .dropdown::after{
+    content: "";
+}
+.menu .dropdown{
+    
+    position: relative;
+    font-family: FontAwesome;
+    padding-left: 5px;
+}
+.menu .dropdown ul{
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    background-color: whitesmoke;
+    box-shadow: 0px 0px 10px rgba(240, 223, 223, 0.25);
+    transition: 0.1s linear;
+    border-radius: 5px;
+}
+.menu .dropdown ul li{
+    padding: 15px;
+    font-size: clampclamp(8px, 2vw, 20px)();
+}
+.menu .dropdown:hover > ul{  
+    opacity: 1;
+    visibility: visible;
+}
+.modal{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: fixed;
+    text-align: center;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+.modalAbout{
+    position: relative;
+    height: 100%;
+    width: 300px;
+    margin-top: 65px;
+    padding: 0;
+    background-color: darkcyan;
+}
+
+.modalAboutitem{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    overflow: hidden;
+}
+.modalAboutitem p{
+    font-weight: bold;
+    margin: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 30px;
+    color:aquamarine;
+    z-index: 1;
+}
+.modalAboutitem:hover p{
+    color: whitesmoke;
+}
+.modalAboutitem::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: lightgreen;
+    clip-path: circle(0px at 50% 50%);
+    transition: 0.3s linear;
+}
+.modalAboutitem:hover:before{
+    clip-path: circle(300px at 50% 50%);
+}
+.modalAbout img{
+    margin-top: 100%;
+    width: 100px;
+    height: 100px;
+}
+.modalintroduce{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5);
+    flex: 1;
+}
+.showImage div:nth-child(2){
+    flex: 2;
+}
+.showImage{
+    display: flex;
+    justify-content:center;
+    position: relative;
+    padding: 0;
+    margin-left: -5%;
+    margin-top: 50px;
+    height: 400px;
+    width: 110%;
+    border: 2px solid;
+}
+.imagemain{
+    position: relative;
+    height: 400px;
+}
+
+.control{
+    position: absolute;
+    font-size: 80px;
+    top: 40%;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+    cursor: pointer;
+    transition: 0.8s ease-in-out;
+}
+.next{
+    left: 98%;
+}
+.next:hover{
+    font-size: 100px;
+    left: 100%;
+}
+.prev{
+    left: 3%;
+}
+.prev:hover{
+    font-size: 100px;
+    left: 0;
+}
+.listImage{
+    display: flex;
+    justify-content: space-between;
+    height: 150px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: auto;
+    border: 2px solid;
+    cursor: pointer;
+}
+.listImage div{
+    flex: 1;
+    cursor: pointer;
+    padding: 5px;
+    transition: 0.2s linear;
+}
+.listImage div:hover{
+    background: orange;
+}
+.active{
+    background: orange;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-position: center;
+}
+.imgFeature{
+    transition: 0.4s linear;
+}
+.imgAssisst{
+    position: absolute;
+    width: 90%;
+    height: 50%;
+    margin-top: 80px;
+    z-index: -1;
+}
+.R{
+    margin-left: 10%;
+}
+.RR{
+    margin-left: 20%;
+}
+.L{
+    margin-left: -10%;
+}
+.LL{
+    margin-left: -20%;
+}
+@keyframes slideRmain{
+    0%{
+    }
+    50%{
+        margin-left: 5%;
+        margin-top: 125px;
+        width: 90%;
+        height: 50%;
+    }
+    100%{
+        margin-left: 105%;
+        margin-top: 125px;
+        width: 90%;
+        height: 50%;
+    }
+}
+@keyframes slideR{
+    0%{
+    }
+    100%{
+        margin-left: 105%;
+    }
+}
