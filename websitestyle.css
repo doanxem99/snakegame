@@ -93,6 +93,9 @@ header{
     opacity: 1;
     visibility: visible;
 }
+.search{
+    transition: 1s ease-in-out;
+}
 .modal{
     display: grid;
     width: 100%;
@@ -158,28 +161,24 @@ header{
     background-color: rgba(0, 0, 0, 0.5);
     flex: 1;
 }
-.showImage div:nth-child(2){
-    flex: 2;
+.imagemain{
+    position: relative;
+    flex: 1;
 }
 .showImage{
     display: flex;
     justify-content:center;
     position: relative;
     padding: 0;
-    margin-left: -5%;
+    margin-left: -33%;
     margin-top: 50px;
-    height: 400px;
-    width: 110%;
+    width: 133%;
     border: 2px solid;
-}
-.imagemain{
-    position: relative;
-    height: 400px;
 }
 
 .control{
     position: absolute;
-    font-size: 80px;
+    font-size: clamp(20px, 3vw, 350px);
     top: 40%;
     transform: translateY(-50%);
     transform: translateX(-50%);
@@ -190,20 +189,19 @@ header{
     left: 98%;
 }
 .next:hover{
-    font-size: 100px;
+    font-size: clamp(2rem, 3rem, 6rem);
     left: 100%;
 }
 .prev{
     left: 3%;
 }
 .prev:hover{
-    font-size: 100px;
+    font-size: clamp(2rem, 3rem, 6rem);
     left: 0;
 }
 .listImage{
     display: flex;
     justify-content: space-between;
-    height: 150px;
     width: 80%;
     margin-left: 10%;
     margin-right: auto;
@@ -234,41 +232,93 @@ img{
     position: absolute;
     width: 90%;
     height: 50%;
-    margin-top: 80px;
+    margin-top: 18%;
     z-index: -1;
 }
 .R{
-    margin-left: 10%;
+    margin-left: 5%;
 }
 .RR{
-    margin-left: 20%;
+    margin-left: 5%;
 }
 .L{
-    margin-left: -10%;
+    margin-left: 5%;
 }
 .LL{
-    margin-left: -20%;
+    margin-left: 5%;
 }
-@keyframes slideRmain{
-    0%{
-    }
+@keyframes moveRightAs{
     50%{
-        margin-left: 5%;
-        margin-top: 125px;
         width: 90%;
         height: 50%;
+        margin-top: 18%;
+        margin-left: 5%;
     }
     100%{
-        margin-left: 105%;
-        margin-top: 125px;
         width: 90%;
         height: 50%;
+        margin-top: 18%;
+        margin-left: 105%;
     }
 }
-@keyframes slideR{
-    0%{
+@keyframes moveRightMain{
+    50%{
+        width: 90%;
+        height: 50%;
+        margin-top: 18%;
+        margin-left: 105%;
     }
     100%{
+        width: 100%;
+        height: 100%;
+        margin-left: 100%;
+        margin-top: 0%;
+    }
+}
+@keyframes moveRight{
+    100%{
+        width: 90%;
+        height: 50%;
+        margin-top: 18%;
         margin-left: 105%;
+    }
+}
+/*PC*/
+@media screen and (min-width:1024px){
+    .showImage{
+        height: 500px;
+    }
+    .imagemain{
+        position: relative;
+        height: 500px;
+    }
+    .listImage{
+        height: 150px;
+    }
+}
+/*Tablet*/
+@media screen and (min-width: 767px) and (max-width: 1023px){
+    .showImage{
+        height: 200px;
+    }
+    .imagemain{
+        position: relative;
+        height: 200px;
+    }
+    .listImage{
+        height: 80px;
+    }
+}
+/*Smartphone*/
+@media screen and (max-width: 767px) {
+    .showImage{
+        height: 150px;
+    }
+    .imagemain{
+        position: relative;
+        height: 150px;
+    }
+    .listImage{
+        height: 40px;
     }
 }

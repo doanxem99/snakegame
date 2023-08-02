@@ -31,7 +31,7 @@
             <ul class="menu">
                 <button class="about" onclick="clickAbout()" id="aboutbutton">=</button>
                 <b class="icon" style="margin-left: 10%;">Coder<span style="color: blue; font-weight: bolder;">DOANXEM99</span> - LAPTRINHCOBAN</b>
-                <li style="margin-left: 20%;"><a href="#">Trang chủ</a></li>
+                <li style="margin-left: clamp(5%, 1vw, 20%)"><a href="#">Trang chủ</a></li>
                 <li class="dropdown"> <a href="#">Trò chơi</a>
                     <ul>
                         <li>
@@ -39,9 +39,11 @@
                         <li><a href="snakegame/screen.html">SnakeGame</a></li>
                     </ul>
                 <li><a href="#">Liên hệ</a></li>
-                <div>
-                    <input style="height: 20px; width: 60%;"></input>
-                    <button style=" width: 80px;">Tìm kiếm</button>
+                <div class="searchBox" style="width: 20%;">
+                    <input class="search" style="height: 20px; visibility: hidden; width: 0;"></input>
+                    <button onfocus="broadenSearch()">
+                        <i class='bx bx-search' style="font-size: 15px;"></i>
+                    </button>
                 </div>
             </ul>
         </div>
@@ -49,7 +51,10 @@
             <h1>WELCOME TO "DOANXEM99" PAGE</h1>
         </header>
         <div class="introduce">
-            <div class="showImage">
+            <div class="showImage" style="overflow: hidden;">
+                <div class="modalintroduce">
+                    <img src="Image/gaimage4.jpg" alt="ga4" class="imgAssisst LL">
+                </div>
                 <div class="modalintroduce">
                     <img src="Image/gaimage5.jpg" alt="ga5" class="imgAssisst L">
                 </div>
@@ -62,8 +67,11 @@
                         <i class='bx bxs-chevron-right'></i>
                     </div>
                 </div>
-                <div class="modalintroduce">
+                <div class="modalintroduce" style="overflow: clip">
                     <img src="Image/gaimage2.jpg" alt="ga2" class="imgAssisst R">
+                </div>
+                <div class="modalintroduce" style="display: none;">
+                    <img src="Image/gaimage3.jpg" alt="ga3" class="imgAssisst RR">
                 </div>
             </div>
         </div>
